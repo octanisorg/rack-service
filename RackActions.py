@@ -2,17 +2,24 @@
 
 import json
 import rack_compartment0Function
+import rack_compartment1Function
+import rack_compartment2Function
+import rack_compartment3Function
+import rack_compartment4Function
+import rack_compartment5Function
 import rack_compartment6Function
+import rack_compartment7Function
+import rack_compartment8Function
+import rack_compartment9Function
+import rack_compartment10Function
 
 def GetUpdatedRackState(message):
 
     # In Py3.x, message.payload comes in as a bytes(string)
     # json.loads needs a string input
     payloadUTF8String = message.payload.decode('utf-8')
-    #print(payloadUTF8String)
 
     decoded_data = json.loads(payloadUTF8String)
-    #print(json.dumps(decoded_data, sort_keys=True, indent=4))
 
 
     validCompartments = {           "rack_compartment0": "rack_compartment0Function",
@@ -28,11 +35,7 @@ def GetUpdatedRackState(message):
                                     "rack_compartment10": "rack_compartment10Function"
                                 }
 
-    #validCompartmentsList = json.dumps(validCompartments)
-
     validCompartmentsList = dict(validCompartments)
-
-    #validCompartmentsList = json.load(validCompartments)
 
     for rack_compartment in decoded_data['state']['desired']:
         if rack_compartment in validCompartmentsList:
@@ -40,28 +43,48 @@ def GetUpdatedRackState(message):
 
             if rack_compartment == "rack_compartment0":
                 functionCalled = validCompartmentsList["rack_compartment0"]
-                print(functionCalled)
                 getattr(rack_compartment0Function, functionCalled)()
+            elif rack_compartment == "rack_compartment1":
+                functionCalled = validCompartmentsList["rack_compartment1"]
+                getattr(rack_compartment1Function, functionCalled)()
+            elif rack_compartment == "rack_compartment2":
+                functionCalled = validCompartmentsList["rack_compartment2"]
+                getattr(rack_compartment2Function, functionCalled)()
+            elif rack_compartment == "rack_compartment3":
+                functionCalled = validCompartmentsList["rack_compartment3"]
+                getattr(rack_compartment3Function, functionCalled)()
+            elif rack_compartment == "rack_compartment4":
+                functionCalled = validCompartmentsList["rack_compartment4"]
+                getattr(rack_compartment4Function, functionCalled)()
+            elif rack_compartment == "rack_compartment5":
+                functionCalled = validCompartmentsList["rack_compartment5"]
+                getattr(rack_compartment5Function, functionCalled)()
+            elif rack_compartment == "rack_compartment6":
+                functionCalled = validCompartmentsList["rack_compartment6"]
+                getattr(rack_compartment6Function, functionCalled)()
+            elif rack_compartment == "rack_compartment7":
+                functionCalled = validCompartmentsList["rack_compartment7"]
+                getattr(rack_compartment7Function, functionCalled)()
+            elif rack_compartment == "rack_compartment8":
+                functionCalled = validCompartmentsList["rack_compartment8"]
+                getattr(rack_compartment8Function, functionCalled)()
+            elif rack_compartment == "rack_compartment9":
+                functionCalled = validCompartmentsList["rack_compartment9"]
+                getattr(rack_compartment9Function, functionCalled)()
+            elif rack_compartment == "rack_compartment10":
+                functionCalled = validCompartmentsList["rack_compartment10"]
+                getattr(rack_compartment10Function, functionCalled)()
+            else:
+                functionCalled = validCompartmentsList["rack_compartment0"]
+                getattr(rack_compartment0Function, functionCalled)() 
+
+            print(functionCalled)
 
 
-    #numCompart = 0
-
-    # while True:
-    #     rack_compartmentX = "rack_compartment" + str(numCompart)
-    #
-    #     if rack_compartmentX in decoded_data['state']['desired']:
-    #         print("desired value for {0}: ".format(rack_compartmentX),decoded_data['state']['desired'][rack_compartmentX])
-    #         numCompart = numCompart + 1
-    #     else:
-    #         print("break")
-    #         break
-
-        # try:
-        #     print("desired value for {0}: ".format(rack_compartmentX), decoded_data['state']['desired'][rack_compartmentX])
-        #     numCompart = numCompart + 1
-        #
-        # except:
-        #     break
+            # if rack_compartment == "rack_compartment0":
+            #     functionCalled = validCompartmentsList["rack_compartment0"]
+            #     print(functionCalled)
+            #     getattr(rack_compartment0Function, functionCalled)()
 
 
 
