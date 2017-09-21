@@ -11,6 +11,11 @@ except RuntimeError:
 #setup gpio
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(20, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(6, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(12, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(16, GPIO.OUT, initial=GPIO.LOW)
 
 
 

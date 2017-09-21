@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 
 def rack_compartment0Function():
-    print('this is the rack_compartment0Function call')
-    GPIO.output(26, GPIO.HIGH)
-
+    if(state == "open"):
+        GPIO.output(26, GPIO.HIGH)
+    else:
+        GPIO.output(26, GPIO.LOW)
