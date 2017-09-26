@@ -1,9 +1,22 @@
-from tkinter import *
-
 import time
 import AWSIoTPythonSDK.MQTTLib as AWSIoTPyMQTT
-
+import json
 import RackActions
+
+try:
+    import RPi.GPIO as GPIO
+except RuntimeError:
+    print("Error importing RPi.GPIO!  This is probably because you need superuser privileges.  You can achieve this by using 'sudo' to run your script")
+
+#setup gpio
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(26, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(21, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(20, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(6, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(12, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(16, GPIO.OUT, initial=GPIO.LOW)
+
 
 
 # Custom MQTT message callback

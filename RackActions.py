@@ -43,40 +43,40 @@ def GetUpdatedRackState(message):
 
             if rack_compartment == "rack_compartment0":
                 functionCalled = validCompartmentsList["rack_compartment0"]
-                getattr(rack_compartment0Function, functionCalled)()
+                getattr(rack_compartment0Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment1":
                 functionCalled = validCompartmentsList["rack_compartment1"]
-                getattr(rack_compartment1Function, functionCalled)()
+                getattr(rack_compartment1Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment2":
                 functionCalled = validCompartmentsList["rack_compartment2"]
-                getattr(rack_compartment2Function, functionCalled)()
+                getattr(rack_compartment2Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment3":
                 functionCalled = validCompartmentsList["rack_compartment3"]
-                getattr(rack_compartment3Function, functionCalled)()
+                getattr(rack_compartment3Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment4":
                 functionCalled = validCompartmentsList["rack_compartment4"]
-                getattr(rack_compartment4Function, functionCalled)()
+                getattr(rack_compartment4Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment5":
                 functionCalled = validCompartmentsList["rack_compartment5"]
-                getattr(rack_compartment5Function, functionCalled)()
+                getattr(rack_compartment5Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment6":
                 functionCalled = validCompartmentsList["rack_compartment6"]
-                getattr(rack_compartment6Function, functionCalled)()
+                getattr(rack_compartment6Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment7":
                 functionCalled = validCompartmentsList["rack_compartment7"]
-                getattr(rack_compartment7Function, functionCalled)()
+                getattr(rack_compartment7Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment8":
                 functionCalled = validCompartmentsList["rack_compartment8"]
-                getattr(rack_compartment8Function, functionCalled)()
+                getattr(rack_compartment8Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment9":
                 functionCalled = validCompartmentsList["rack_compartment9"]
-                getattr(rack_compartment9Function, functionCalled)()
+                getattr(rack_compartment9Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             elif rack_compartment == "rack_compartment10":
                 functionCalled = validCompartmentsList["rack_compartment10"]
-                getattr(rack_compartment10Function, functionCalled)()
+                getattr(rack_compartment10Function, functionCalled)(decoded_data['state']['desired'][rack_compartment])
             else:
                 functionCalled = validCompartmentsList["rack_compartment0"]
-                getattr(rack_compartment0Function, functionCalled)()
+                getattr(rack_compartment0Function, functionCalled)(decoded_data['state']['desired'][rack_compartment]) 
 
             print(functionCalled)
 
