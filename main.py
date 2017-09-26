@@ -2,7 +2,6 @@ from tkinter import *
 
 import time
 import AWSIoTPythonSDK.MQTTLib as AWSIoTPyMQTT
-import json
 
 import RackActions
 

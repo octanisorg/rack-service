@@ -76,7 +76,7 @@ def GetUpdatedRackState(message):
                 getattr(rack_compartment10Function, functionCalled)()
             else:
                 functionCalled = validCompartmentsList["rack_compartment0"]
-                getattr(rack_compartment0Function, functionCalled)() 
+                getattr(rack_compartment0Function, functionCalled)()
 
             print(functionCalled)
 
